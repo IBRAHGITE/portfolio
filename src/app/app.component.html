@@ -1,0 +1,272 @@
+<!-- Navbar -->
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container">
+    <div class="nav-brand">
+      <span class="logo"><img src="assets/img/igite.jpg" alt=""></span>
+      <span class="name">Ibrahim GITE</span>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span *ngIf="!isMenuOpen">☰</span>
+      <span *ngIf="isMenuOpen">✕</span>
+    </button>
+
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li><a (click)="scrollToSection('home')" [class.active]="activeSection === 'home'">Accueil</a></li>
+      <li><a (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">À propos</a></li>
+      <li><a (click)="scrollToSection('skills')" [class.active]="activeSection === 'skills'">Compétences</a></li>
+      <li><a (click)="scrollToSection('experience')" [class.active]="activeSection === 'experience'">Expériences</a></li>
+      <li><a (click)="scrollToSection('projects')" [class.active]="activeSection === 'projects'">Projets</a></li>
+      <li><a (click)="scrollToSection('education')" [class.active]="activeSection === 'education'">Formation</a></li>
+      <li><a (click)="scrollToSection('contact')" [class.active]="activeSection === 'contact'">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="particles"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="glitch" data-text="IBRAHIM GITE">IBRAHIM GITE</h1>
+      <h2 class="typewriter">Développeur Full Stack</h2>
+      <p class="hero-description">
+        Passionné par le développement web et la création d'expériences digitales innovantes.
+        Spécialisé en Angular, Laravel et technologies modernes.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" (click)="scrollToSection('projects')">
+          Voir mes projets
+        </button>
+        <button class="btn btn-secondary" (click)="downloadCV()" style="color: black; border: 2px solid #000;">
+          <mat-icon inline>download</mat-icon> Télécharger CV
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="avatar-container">
+        <div class="avatar-ring"></div>
+        <div class="avatar">
+          <img src="assets/img/coder.jpg" alt="Portrait d'Ibrahim GITE" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+    <div class="arrow-down"></div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">À Propos de Moi</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p class="intro">
+          Développeur Full Stack passionné et créatif, je transforme des idées en solutions digitales performantes.
+        </p>
+
+        <p>
+          Avec une expertise approfondie en <strong>Angular</strong> et <strong>Laravel</strong>,
+          je crée des applications web modernes, scalables et user-friendly. Mon parcours m'a permis
+          de maîtriser l'ensemble de la stack de développement, du front-end au back-end et aussi la gestions des données.
+        </p>
+
+        <p>
+          Actuellement en poste chez <strong>Alerte Info</strong>, je développe et hébèrege des sites
+          web pour particuliers et aussi des applications web interne. Mes expériences chez
+          <strong>Endeavour Mining</strong> et <strong>SIMAT</strong> m'ont également permis de travailler sur des projets
+          techniques d'envergure.
+        </p>
+
+        <div class="about-info">
+          <div class="info-item">
+            <mat-icon>cake</mat-icon>
+            <div>
+              <strong>Né le</strong>
+              <p>01/04/2002</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>public</mat-icon>
+            <div>
+              <strong>Nationalité</strong>
+              <p>Ivoirienne</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>location_on</mat-icon>
+            <div>
+              <strong>Localisation</strong>
+              <p>Abidjan, Côte d'Ivoire</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon>work</mat-icon>
+            <div>
+              <strong>Statut</strong>
+              <p>Célibataire</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Compétences Techniques</h2>
+    <p class="section-subtitle">Technologies et outils que je maîtrise</p>
+
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of skills">
+        <a [href]="skill.link" target="_blank" class="skill-link">
+          <div class="skill-icon">
+            <img [src]="skill.icon" loading="lazy">
+
+          </div>
+          <h3>{{skill.name}}</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" [style.width.%]="skill.level"></div>
+          </div>
+          <span class="skill-level">{{skill.level}}%</span>
+          <mat-icon class="external-link">open_in_new</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Expériences Professionnelles</h2>
+
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let exp of experiences">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">{{exp.period}}</span>
+          <h3>{{exp.title}}</h3>
+          <h4>{{exp.company}}</h4>
+          <ul>
+            <li *ngFor="let task of exp.description">{{task}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Projets Réalisés</h2>
+    <p class="section-subtitle">Une sélection de mes réalisations</p>
+    <div class="projects-grid">
+  <div class="project-card" *ngFor="let project of projects">
+    <div class="project-iframe">
+      <iframe [src]="project.url | safeUrl" frameborder="0"></iframe>
+    </div>
+    <div class="project-content">
+      <h3>{{project.name}}</h3>
+      <p>{{project.description}}</p>
+      <a [href]="project.url" target="_blank" class="project-link">
+        <mat-icon inline>open_in_new</mat-icon> Visiter le site
+      </a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="education">
+  <div class="container">
+    <h2 class="section-title">Formation</h2>
+
+    <div class="education-list">
+      <div class="education-item" *ngFor="let edu of education">
+        <mat-icon class="education-icon">school</mat-icon>
+
+        <div class="education-content">
+          <h3>{{edu.degree}}</h3>
+          <h4>{{edu.school}}</h4>
+
+          <p class="education-location">
+            <mat-icon inline>location_on</mat-icon> {{edu.location}}
+          </p>
+
+          <span class="education-year">{{edu.year}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Contactez-Moi</h2>
+    <p class="section-subtitle">N'hésitez pas à me contacter pour vos projets</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <mat-icon>email</mat-icon>
+        <h3>Email</h3>
+        <a [href]="'mailto:' + email">{{ email }}</a>
+
+      </div>
+
+      <div class="contact-card">
+        <mat-icon>phone</mat-icon>
+        <h3>Téléphone</h3>
+        <a href="tel:+2250769969591">+225 07 69 96 95 91</a>
+      </div>
+
+      <div class="contact-card">
+        <mat-icon>location_on</mat-icon>
+        <h3>Adresse</h3>
+        <p>11 BP 1444 Abidjan 02</p>
+      </div>
+
+      <!-- <div class="contact-card">
+        <mat-icon>work_outline</mat-icon>
+        <h3>Portfolio</h3>
+        <a href="#" target="_blank">Voir mon portfolio</a>
+      </div> -->
+    </div>
+
+    <div class="cta-download">
+      <button class="btn btn-primary btn-large" (click)="downloadCV()">
+        <mat-icon inline>download</mat-icon> Télécharger mon CV
+      </button>
+    </div>
+
+  </div>
+</section>
+<!-- <button class="back-to-top" (click)="scrollToSection('home')">↑</button> -->
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 Ibrahim GITE - Développeur Full Stack</p>
+    <p>Créé avec ❤️ et Angular</p>
+  </div>
+</footer>
