@@ -1185,6 +1185,23 @@ body {
       right: 0;
       animation-delay: 2s;
     }
+
+    &.badge-4 {
+      top: 25%;
+      left: 0%;
+      animation-delay: 3s;
+    }
+
+    &.badge-5 {
+      top: 85%;
+      right: 55%;
+      animation-delay: 4s;
+    }
+    &.badge-6 {
+      top: 0%;
+      right: 25%;
+      animation-delay: 3s;
+    }
   }
 
   @keyframes float-badge {
