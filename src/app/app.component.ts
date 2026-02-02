@@ -322,6 +322,8 @@ export class AppComponent {
         { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', link: 'https://isocpp.org', level: 70 },
         { name: 'JWT / Auth', icon: 'https://jwt.io/img/pic_logo.svg', link: 'https://jwt.io', level: 85 },
         { name: 'MVC Architecture', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', link: 'https://laravel.com/docs/architecture', level: 95 },
+        {name: 'Merise', icon: 'https://cdn.jsdelivr.net/gh/devicos/devicon/icons/postgresql/postgresql-original.svg' ,link: 'https://fr.wikipedia.org/wiki/Merise',level: 90},
+        {name: 'UML',icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/UML_logo.svg',link: 'https://www.uml.org',level: 90}
       ]
     }
   ];
@@ -331,8 +333,8 @@ export class AppComponent {
     company: 'Alerte Info',
     companyLogo: 'assets/img/alerteinfo.png',
     location: 'Abidjan, Côte d\'Ivoire',
-    period: 'Depuis Juin 2024',
-    startDate: new Date('2024-06-01'),
+    period: 'Depuis Juin 2025',
+    startDate: new Date('2025-06-01'),
     type: 'CDD',
     technologies: ['Angular', 'Laravel', 'PHP', 'MySQL', 'Bootstrap'],
     description: [
