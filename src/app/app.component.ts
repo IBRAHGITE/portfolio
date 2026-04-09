@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy, AfterViewInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from '../../material.module';
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
 interface NavItem {
   id: string;
   label: string;
@@ -66,6 +67,7 @@ interface Project {
   description: string;
   stack: string[];
   role: string;
+  projectScreenshot?: string; // Optionnel : capture d'écran du projet
 }
 
 interface PersonalInfo {
@@ -101,16 +103,18 @@ interface Journey {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, MaterialModule, SafeUrlPipe],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  // styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit, OnDestroy{
 
   title = 'IBRAHPHOLIO';
   activeSection = 'home';
   isMenuOpen = false;
   scrolled = false;
   selectedCategory: number = 0;
+  private typingTimeout: any;
   roles: string[] = [
     'Développeur Full Stack',
     'Expert Angular & Laravel',
@@ -147,7 +151,8 @@ export class AppComponent {
   ];
   constructor(
     private sanitizer: DomSanitizer,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private http: HttpClient,
   ) {}
   transform(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
@@ -557,7 +562,31 @@ get sortedExperiences(): Experience[] {
   ];
 
   ngOnInit() {
-    this.observeSections();
+    this.projects.forEach(project => this.fetchScreenshot(project));
+    this.typewriterEffect(); // logique simple
+  }
+  fetchScreenshot(project: Project) {
+    const url = `https://api.microlink.io?url=${encodeURIComponent(project.url)}&screenshot=true&delay=3000`;
+    this.http.get<any>(url).subscribe({
+      next: (res) => {
+        if(res?.data?.screenshot?.url) {
+          project.projectScreenshot = res.data.screenshot.url;
+        }
+      },
+      error: (err) => {
+        console.error('Erreur Microlink pour', project.name, err);
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.observeSections(); // DOM prêt ici
+  }
+
+  ngOnDestroy() {
+    if (this.typingTimeout) {
+      clearTimeout(this.typingTimeout);
+    }
   }
 
   // @HostListener('window:scroll', ['$event'])
@@ -659,12 +688,12 @@ get sortedExperiences(): Experience[] {
   }
   sendMessage(){}
 
+
   typewriterEffect() {
     const currentRole = this.roles[this.currentRoleIndex];
 
     if (!this.isDeleting && this.displayedRole === currentRole) {
-      // Pause à la fin
-      setTimeout(() => {
+      this.typingTimeout = setTimeout(() => {
         this.isDeleting = true;
         this.typewriterEffect();
       }, 2000);
@@ -674,7 +703,8 @@ get sortedExperiences(): Experience[] {
     if (this.isDeleting && this.displayedRole === '') {
       this.isDeleting = false;
       this.currentRoleIndex = (this.currentRoleIndex + 1) % this.roles.length;
-      setTimeout(() => this.typewriterEffect(), 500);
+
+      this.typingTimeout = setTimeout(() => this.typewriterEffect(), 500);
       return;
     }
 
@@ -685,6 +715,7 @@ get sortedExperiences(): Experience[] {
     }
 
     const speed = this.isDeleting ? 50 : this.typingSpeed;
-    setTimeout(() => this.typewriterEffect(), speed);
+
+    this.typingTimeout = setTimeout(() => this.typewriterEffect(), speed);
   }
 }

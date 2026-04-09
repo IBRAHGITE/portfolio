@@ -233,7 +233,7 @@
         <div class="profile-card">
           <!-- Image de profil -->
           <div class="profile-image">
-            <img src="assets/img/coder.jpg" alt="Ibrahim GITE" loading="lazy" />
+            <img src="assets/img/me2.jpeg" alt="Ibrahim GITE" loading="lazy" />
             <div class="profile-overlay">
               <div class="profile-status">
                 <span class="status-dot"></span>
@@ -492,7 +492,7 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<!-- <section id="projects" class="projects">
   <div class="container">
     <h2 class="section-title">Projets Réalisés</h2>
     <p  class="section-subtitle">Une sélection de mes réalisations</p>
@@ -508,11 +508,49 @@
           </div>
           <p>{{project.description}}</p>
 
+          <div class="project-stack">
+            <span class="stack-tag" *ngFor="let tech of project.stack">{{tech}}</span>
+          </div>
+
+          <a [href]="project.url" target="_blank" class="project-link">
+            <mat-icon inline>open_in_new</mat-icon> Visiter le site
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Projets Réalisés</h2>
+    <p class="section-subtitle">Une sélection de mes réalisations</p>
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <!-- Image du projet -->
+        <div class="project-image">
+          <a [href]="project.url" target="_blank">
+            <!-- <img [src]="project.image" [alt]="project.name" /> -->
+              <img [src]="project.projectScreenshot || 'assets/img/placeholder.png'" alt="Screenshot du site" />
+          </a>
+        </div>
+
+        <!-- Contenu du projet -->
+        <div class="project-content">
+          <div class="project-header">
+            <h3>{{project.name}}</h3>
+            <span class="project-role">{{project.role}}</span>
+          </div>
+
+          <p>{{project.description}}</p>
+
           <!-- Technologies utilisées -->
           <div class="project-stack">
             <span class="stack-tag" *ngFor="let tech of project.stack">{{tech}}</span>
           </div>
 
+          <!-- Lien vers le site -->
           <a [href]="project.url" target="_blank" class="project-link">
             <mat-icon inline>open_in_new</mat-icon> Visiter le site
           </a>
@@ -671,7 +709,7 @@
           <li><a href="#about" class="footer-link">À propos</a></li>
           <li><a href="#projects" class="footer-link">Projets</a></li>
           <li><a href="#skills" class="footer-link">Compétences</a></li>
-          <li><a href="#education" class="footer-link">Education</a></li>
+          <li><a href="#education" class="footer-link">Formations</a></li>
         </ul>
       </div>
 
