@@ -400,27 +400,35 @@ get sortedExperiences(): Experience[] {
 }
 
   projects: Project[] = [
+    { name: 'Alerte info',
+      url: 'https://www.alerte-info.net/',
+      description: 'Site web du média Alerte info',
+      stack: ['Angular', 'Laravel', 'MySQL'],
+      role: 'Développeur Fullstack'
+    },
+    { name: 'Quoi de neuf',
+      url: 'https://www.quoideneuf.info/',
+      description: 'Site web d\'un média en ligne',
+      stack: ['Angular', 'Laravel', 'MySQL'],
+      role: 'Développeur Fullstack'
+    },
     { name: 'Tabala Éditions',
-      url: 'https://www.tabalaeditions.com/',
+      url: 'https://tabalaeditions.com/fr',
       description: 'Site de maison d\'édition',
       stack: ['React'],
       role: 'Développeur Frontend'
     },
-    { name: 'Mnaracom TV',
-      url: 'https://mnaracom-tv.net/',
-      description: 'Plateforme de streaming',
-      stack: ['Angular', 'Laravel', 'MySQL'],
-      role: 'Développeur Fullstack'
-    },
-    // { name: 'Ivoire Hebdo',
-    //   url: 'https://www.ivoirhebdo.com/',
-    //   description: 'Site web d\'actualités',
-    //   stack: ['Laravel', 'MySQL'],
+    // { name: 'Mnaracom TV',
+    //   url: 'https://mnaracom-tv.net/',
+    //   description: 'Plateforme de streaming',
+    //   stack: ['Angular', 'Laravel', 'MySQL'],
     //   role: 'Développeur Fullstack'
     // },
-    { name: 'Massiwa web',
-      url: 'https://massiwa.alerteinfo-mairie.com/',
-      description: 'Journal en ligne',
+
+
+    { name: 'Ivoire Hebdo',
+      url: 'https://www.ivoirhebdo.com/',
+      description: 'Site web d\'actualités',
       stack: ['Laravel', 'MySQL'],
       role: 'Développeur Fullstack'
     },
@@ -429,6 +437,30 @@ get sortedExperiences(): Experience[] {
       description: 'Radio télé HRT',
       stack: ['Angular', 'Laravel', 'MySQL'],
       role: 'Développeur Fullstack'
+    },
+    { name: 'Croc Info',
+      url: 'https://crocinfos.net/',
+      description: 'Site web de média et d\'actualités',
+      stack: ['Laravel', 'MySQL'],
+      role: 'Développeur Fullstack'
+    },
+    { name: 'Massiwa web',
+      url: 'https://massiwa.alerteinfo-mairie.com/',
+      description: 'Journal en ligne',
+      stack: ['Laravel', 'MySQL'],
+      role: 'Développeur Fullstack'
+    },
+    { name: 'Eburnie today',
+      url: 'https://eburnietoday.net/',
+      description: 'Radio télé HRT',
+      stack: ['Laravel', 'MySQL'],
+      role: 'Développeur Backend'
+    },
+    { name: 'Journal liberté',
+      url: 'https://journal-liberte.info/',
+      description: 'Radio télé HRT',
+      stack: ['Laravel', 'MySQL'],
+      role: 'Développeur Backend'
     },
     { name: 'RTN',
       url: 'https://rtn-anjouan.com/',
