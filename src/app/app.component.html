@@ -492,7 +492,7 @@
 </section>
 
 <!-- Projects Section -->
-<!-- <section id="projects" class="projects">
+<section id="projects" class="projects">
   <div class="container">
     <h2 class="section-title">Projets Réalisés</h2>
     <p  class="section-subtitle">Une sélection de mes réalisations</p>
@@ -519,24 +519,21 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<!-- <section id="projects" class="projects">
   <div class="container">
     <h2 class="section-title">Projets Réalisés</h2>
     <p class="section-subtitle">Une sélection de mes réalisations</p>
 
     <div class="projects-grid">
       <div class="project-card" *ngFor="let project of projects">
-        <!-- Image du projet -->
         <div class="project-image">
           <a [href]="project.url" target="_blank">
-            <!-- <img [src]="project.image" [alt]="project.name" /> -->
               <img [src]="project.projectScreenshot || 'assets/img/placeholder.png'" alt="Screenshot du site" />
           </a>
         </div>
 
-        <!-- Contenu du projet -->
         <div class="project-content">
           <div class="project-header">
             <h3>{{project.name}}</h3>
@@ -545,12 +542,10 @@
 
           <p>{{project.description}}</p>
 
-          <!-- Technologies utilisées -->
           <div class="project-stack">
             <span class="stack-tag" *ngFor="let tech of project.stack">{{tech}}</span>
           </div>
 
-          <!-- Lien vers le site -->
           <a [href]="project.url" target="_blank" class="project-link">
             <mat-icon inline>open_in_new</mat-icon> Visiter le site
           </a>
@@ -558,7 +553,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Education Section -->
 <section id="education" class="education">
