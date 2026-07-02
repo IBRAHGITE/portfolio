@@ -4003,6 +4003,11 @@ $accent-gradient: linear-gradient(135deg, #6c63ff 0%, #5b52d9 100%);
       animation: heartbeat 1.5s ease-in-out infinite;
       display: inline-block;
     }
+    .heart2 {
+      color: #ff6b6b;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
 
     .tech {
       color: $primary-color;

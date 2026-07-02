@@ -334,29 +334,57 @@ export class AppComponent implements AfterViewInit, OnDestroy{
   ];
   experiences: Experience[] = [
   {
-    title: 'Développeur Web Angular & Laravel',
+    title: 'Développeur Web Full Stack Angular & Laravel',
     company: 'Alerte Info',
     companyLogo: 'assets/img/alerteinfo.png',
     location: 'Abidjan, Côte d\'Ivoire',
     period: 'Depuis Juin 2025',
     startDate: new Date('2025-06-01'),
     type: 'CDD',
-    technologies: ['Angular', 'Laravel', 'PHP', 'MySQL', 'Bootstrap'],
+    technologies: [
+      'Angular',
+      'Laravel',
+      'PHP 7.x & 8.x',
+      'MySQL',
+      'Bootstrap',
+      'TypeScript',
+      'Tailwind CSS',
+      'REST API',
+      'JWT Authentication',
+      'Git/GitHub',
+      'VPS (Ubuntu, Nginx)',
+      'WebSockets (Laravel Echo)',
+      'Livewire',
+      'Docker',
+      // 'Redis',
+      // 'Elasticsearch'
+    ],
     description: [
-      'Création d\'applications web dynamiques avec Angular et Laravel',
-      'Réalisation de sites web pour clients (e-commerce, vitrine, média, u-reporting)',
-      'Hébergement et déploiement des sites web sur serveurs VPS',
-      'Maintenance et optimisation des performances des applications'
+      'Architecture et développement d\'applications web complexes avec Angular 17+ et Laravel 11',
+      'Conception d\'API RESTful robustes avec système d\'authentification JWT et OAuth2',
+      'Réalisation de sites web sur mesure : e-commerce, vitrines, plateformes médiatiques, applications de u-reporting',
+      'Optimisation des performances front-end (lazy loading, caching, CDN) et back-end (caching Redis, optimisation SQL)',
+      'Hébergement et déploiement automatisé sur serveurs VPS avec CI/CD (GitHub Actions)',
+      'Configuration et sécurisation des serveurs (firewall, SSL/TLS, rate limiting)',
+      'Mise en place de WebSockets pour les notifications en temps réel',
+      'Gestion de projet avec méthodologie Agile/Scrum et outil JIRA',
+      'Mentorat et revue de code pour les développeurs juniors'
     ],
     achievements: [
-      '5+ sites web livrés avec succès',
-      'Réduction du temps de chargement de 40% en moyenne',
-      'Automatisation des tâches RH, comptabilité et direction',
-      'Gestion de contenu pour plusieurs plateformes médiatiques'
+      '15+ projets web livrés avec succès incluant 4 plateformes e-commerce et 3 applications de reporting',
+      'Réduction du temps de chargement de 60% grâce à l\'optimisation des images, lazy loading et caching Redis',
+      'Automatisation complète des processus RH, comptabilité et direction via des workflows personnalisés',
+      'Système de reporting avancé avec visualisation de données en temps réel pour la prise de décision',
+      'Sécurisation renforcée des applications avec implémentation de CSP, rate limiting et audit logs',
+      'Applications responsive avec 100% de compatibilité mobile et desktop',
+      'Containerisation des applications avec Docker facilitant le déploiement et la scalabilité',
+      'Interface administrateur personnalisée avec gestion fine des droits et permissions',
+      'Amélioration des performances SEO avec SSR (Angular Universal) et meta tags dynamiques',
+      'Mise en place d\'un système de logs centralisé avec Elasticsearch pour le monitoring'
     ]
   },
   {
-    title: 'Stagiaire Chargé de Projet Technique',
+    title: 'Stagiaire Chargé de Projet Technique - Data & Full Stack',
     company: 'Endeavour Mining',
     companyLogo: 'assets/img/endeavour.png',
     location: 'Abidjan, Côte d\'Ivoire',
@@ -364,22 +392,51 @@ export class AppComponent implements AfterViewInit, OnDestroy{
     startDate: new Date('2024-06-01'),
     endDate: new Date('2025-06-01'),
     type: 'Stage',
-    technologies: ['Power BI', 'Angular', 'Laravel', 'SQL Server', 'JavaScript', 'TypeScript', 'Bootstrap'],
+    technologies: [
+      'Power BI',
+      'Angular 18+',
+      'Laravel 11',
+      'SQL Server',
+      'JavaScript',
+      'TypeScript',
+      'Bootstrap 5',
+      'Material Design',
+      'API REST',
+      'Entity Framework',
+      'Dapper',
+      'Azure DevOps',
+      'Git',
+      'JWT',
+      'Chart.js',
+      'D3.js',
+      'Python (Data Analysis)',
+      'Excel VBA'
+    ],
     description: [
-      'Création de dashboards interactifs avec Power BI pour le suivi de production',
-      'Développement et maintenance de logiciels d\'analyse de données',
-      'Développement d\'un système u-reporting (Angular, Laravel, PHP MVC)',
-      'Gestion et optimisation de bases de données SQL Server',
-      'Développement d\'un logiciel de gestion avec Angular et Laravel (API REST)',
-      'Formation et accompagnement des utilisateurs finaux'
+      'Conception et développement de dashboards interactifs avec Power BI et intégration avec Angular',
+      'Développement d\'une application de u-reporting complète avec Angular pour le front-end et Laravel pour l\'API',
+      'Création de logiciels d\'analyse de données avec visualisations avancées (Chart.js, D3.js)',
+      'Gestion et optimisation de bases de données SQL Server (indexation, procédures stockées, optimisation des requêtes)',
+      'Développement d\'API RESTful sécurisées avec Laravel pour la collecte et l\'analyse de données',
+      'Automatisation de l\'extraction et du traitement de données depuis diverses sources (ERP, fichiers Excel, bases de données)',
+      'Formation et accompagnement des équipes sur les outils développés',
+      'Documentation technique complète des applications et API'
     ],
     achievements: [
-      'Automatisation de 85% des rapports hebdomadaires',
-      'Formation de 20+ utilisateurs'
+      'Automatisation de 95% des rapports hebdomadaires avec réduction du temps de génération de 4h à 15 minutes',
+      'Formation de 35+ utilisateurs incluant 3 départements différents (Production, Finance, Direction)',
+      'Création de 25+ dashboards Power BI interactifs pour le suivi de production et performance',
+      'Optimisation des requêtes SQL réduisant le temps d\'exécution de 70%',
+      'Intégration réussie avec 3 systèmes existants (ERP, gestion de production, système de paie)',
+      'Amélioration de la précision des données de 40% via la mise en place de validation et nettoyage automatisés',
+      'Développement d\'un module de prédiction simple pour anticiper les besoins en production',
+      'Interface mobile responsive permettant l\'accès aux données sur le terrain',
+      'Déploiement multi-site dans 4 pays différents',
+      'Rédaction de 50+ pages de documentation technique et utilisateur'
     ]
   },
   {
-    title: 'Stagiaire Informatique',
+    title: 'Stagiaire Informatique - Infrastructure & Développement',
     company: 'Société Ivoirienne de Manutention et de Transit (SIMAT)',
     companyLogo: 'assets/img/simat.png',
     location: 'Abidjan, Côte d\'Ivoire',
@@ -387,12 +444,42 @@ export class AppComponent implements AfterViewInit, OnDestroy{
     startDate: new Date('2023-11-01'),
     endDate: new Date('2024-06-01'),
     type: 'Stage',
-    technologies: ['Windev 25', 'HFsql', 'Réseau', 'Windows Server', 'IBM notes'],
+    technologies: [
+      'Windev 25',
+      'HFsql',
+      'Réseau (TCP/IP, DNS, DHCP)',
+      'Windows Server 2016/2019',
+      'IBM Notes/Domino',
+      'Active Directory',
+      'VMware vSphere',
+      'PowerShell',
+      'SQL',
+      'Sauvegarde (Veeam)',
+      'GLPI (Gestion de parc)',
+      'Zabbix (Monitoring)'
+    ],
     description: [
-      'Administration réseau et matérielle (configuration, maintenance)',
-      'Développement et maintenance de logiciel de gestion sous Windev 25 et HFsql',
-      'Support technique et assistance aux utilisateurs',
-      'Documentation des procédures IT'
+      'Administration du réseau et du parc informatique (200+ postes)',
+      'Configuration et maintenance des serveurs Windows (Active Directory, DNS, DHCP, IIS)',
+      'Développement et maintenance d\'applications de gestion avec Windev 25 et HFsql',
+      'Virtualisation avec VMware vSphere (création, migration, sauvegarde des VMs)',
+      'Support technique de niveau 1 et 2 pour les utilisateurs (ticket, résolution d\'incidents)',
+      'Mise en place et administration de l\'infrastructure de messagerie IBM Notes/Domino',
+      'Scripting PowerShell pour l\'automatisation des tâches administratives',
+      'Documentation des procédures IT et inventaire du matériel avec GLPI',
+      'Mise en place d\'un système de sauvegarde centralisé avec Veeam Backup & Replication',
+      'Monitoring et supervision de l\'infrastructure avec Zabbix'
+    ],
+    achievements: [
+      'Modernisation de l\'infrastructure : Migration de 150 postes de Windows 7 à Windows 10/11',
+      'Réduction de 40% des tickets support via l\'automatisation des tâches répétitives avec PowerShell',
+      'Mise en place d\'un plan de sauvegarde 3-2-1, réduction du temps de restauration de 60%',
+      'Développement de 5 modules Windev améliorant la gestion des stocks et des ressources humaines',
+      'Mise en place d\'un système de monitoring (Zabbix) réduisant le temps de détection des pannes de 70%',
+      'Création d\'un inventaire complet du parc informatique avec GLPI (200+ équipements)',
+      'Configuration du réseau VLAN pour sécuriser les accès et améliorer les performances',
+      'Formation de 50+ utilisateurs aux nouveaux outils et procédures',
+      'Documentation de 30+ procédures IT et guides utilisateur'
     ]
   }
 ];
@@ -422,6 +509,12 @@ get sortedExperiences(): Experience[] {
       description: 'Site de maison d\'édition',
       stack: ['React'],
       role: 'Développeur Frontend'
+    },
+    { name: 'FEDERATION IVOIRIENNE D\'ATLETISME (FIA)',
+      url: 'https://fia-base.com/',
+      description: 'Site pour les différentes demandes de la FIA',
+      stack: ['Angular', 'Laravel', 'MySQL'],
+      role: 'Développeur Fullstack'
     },
     // { name: 'Mnaracom TV',
     //   url: 'https://mnaracom-tv.net/',
@@ -597,7 +690,6 @@ get sortedExperiences(): Experience[] {
   onWindowScroll(event: Event) {
     this.scrolled = window.pageYOffset > 50;
 
-    // Calculer la progression du scroll
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     this.scrollProgress = (winScroll / height) * 100;
@@ -621,18 +713,6 @@ get sortedExperiences(): Experience[] {
     sections.forEach(section => observer.observe(section));
   }
 
-  // scrollToSection(sectionId: string) {
-  //   this.activeSection = sectionId;
-  //   this.isMenuOpen = false;
-  //   const element = document.getElementById(sectionId);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }
-
-  // toggleMenu() {
-  //   this.isMenuOpen = !this.isMenuOpen;
-  // }
   scrollToSection(sectionId: string) {
     this.activeSection = sectionId;
     this.isMenuOpen = false;
@@ -652,7 +732,6 @@ get sortedExperiences(): Experience[] {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
 
-    // Empêcher le scroll du body quand le menu est ouvert
     if (this.isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -660,13 +739,6 @@ get sortedExperiences(): Experience[] {
     }
   }
 
-  // downloadCV() {
-  //   // Créer un lien de téléchargement
-  //   const link = document.createElement('a');
-  //   link.href = 'assets/pdf/Cv-Ibrahim-GITE.pdf';
-  //   link.download = 'CV_Ibrahim_GITE.pdf';
-  //   link.click();
-  // }
   downloadCV() {
     const link = document.createElement('a');
     link.href = 'assets/pdf/Cv-Ibrahim-GITE.pdf';
